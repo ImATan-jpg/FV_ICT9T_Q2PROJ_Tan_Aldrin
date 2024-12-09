@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pochero Recipe - MagCapé</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+        body {
+            background-color: #3c1810;
+            background-image: radial-gradient(circle at center, #592115 0%, #3c1810 0.5%);
+            background-size: 50px 50px;
+            position: relative;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at center, rgba(89, 33, 21, 0.5) 8px, transparent 8px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: #592115;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: #333;
+            font-size: 14px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .coffee-card, .recipe-card {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .coffee-card:hover, .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .coffee-content {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .coffee-image {
+            flex: 0 0 40%;
+        }
+
+        .coffee-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .coffee-details {
+            flex: 0 0 60%;
+             padding: 24px;
+        }
+
+        h2 {
+            color: #592115;
+            margin: 0 0 16px 0;
+        }
+
+        .price {
+            color: #592115;
+            font-weight: bold;
+            font-size: 24px;
+            margin: 0 0 20px 0;
+        }
+
+        .size-selection, .milk-selection {
+            margin-bottom: 24px;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .size-options label {
+            padding: 8px 16px;
+            border: 2px solid #592115;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+.size-options input[type="radio"] {
+    display: none;
+}
+
+.size-options input[type="radio"]:checked + label {
+    background: #592115;
+    color: white;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #592115;
+    border-radius: 6px;
+    background: white;
+    margin-top: 8px;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 14px;
+    background: #592115;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.buy-btn:hover {
+    background: #3c1810;
+}
+
+.recipe-card {
+    padding: 24px;
+}
+
+.recipe-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.recipe-section h3 {
+    color: #592115;
+    margin: 0 0 16px 0;
+}
+
+ul, ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+    color: #333;
+}
+    </style>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg bg-white py-3 px-4 position-relative" style="z-index: 1;">
+        <div class="container-fluid">
+            <div class="logo">MagCapé</div>
+            <div class="d-flex align-items-center gap-4">
+                <a href="Menu.html" class="nav-link">OUR MENU</a>
+                <a href="index.html" class="nav-link">OUR CAFÉ</a>
+                <div class="search-bar">
+                    <input type="text" placeholder="SEARCH" class="form-control">
+                </div>
+                <a href="Basket.html" class="nav-link">MY BASKET</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container"> 
+        <div class="coffee-card menu-item">
+            <div class="coffee-content">
+                <div class="coffee-image">
+                    <img src="https://i.pinimg.com/736x/9c/2e/7b/9c2e7b7b7b7b7b7b7b7b7b7b7b7b7b7b.jpg" alt="Pochero">
+                </div>
+                <div class="coffee-details">
+                    <h2>Pochero (Filipino Beef Stew)</h2>
+                    <p class="price">$14.99</p>
+                    
+                    <div class="size-selection">
+                        <h3>Serving Size:</h3>
+                        <div class="size-options">
+                            <input type="radio" id="small" name="size" value="small">
+                            <label for="small">Individual</label>
+                            <input type="radio" id="medium" name="size" value="medium" checked>
+                            <label for="medium">Family (4-6)</label>
+                            <input type="radio" id="large" name="size" value="large">
+                            <label for="large">Party (8-10)</label>
+                        </div>
+                    </div>
+
+                    <div class="milk-selection">
+                        <h3>Meat Choice:</h3>
+                        <select>
+                            <option selected>Beef</option>
+                            <option>Pork</option>
+                            <option>Mixed</option>
+                        </select>
+                    </div>
+
+                    <button class="buy-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-card menu-item">
+            <h2>Traditional Pochero Recipe</h2>
+            <div class="recipe-content">
+                <div class="recipe-section">
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <h4>Main Ingredients:</h4>
+                        <li>2 lbs beef chuck, cubed</li>
+                        <li>2 pieces chorizo de bilbao</li>
+                        <li>2 large potatoes, quartered</li>
+                        <li>2 sweet potatoes, quartered</li>
+                        <li>1 small cabbage, wedged</li>
+                        <li>2 plantains, sliced</li>
+                        <li>1 can garbanzo beans</li>
+                        <li>1 bundle string beans</li>
+                        <li>2 corn cobs, cut</li>
+                        <li>1 bunch pechay</li>
+                        
+                        <h4 class="mt-3">Sauce Base:</h4>
+                        <li>1 onion, chopped</li>
+                        <li>4 cloves garlic, minced</li>
+                        <li>2 tomatoes, diced</li>
+                        <li>1 tablespoon peppercorns</li>
+                        <li>2 bay leaves</li>
+                        <li>Salt to taste</li>
+                        <li>Fish sauce to taste</li>
+                    </ul>
+                </div>
+                
+                <div class="recipe-section">
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <h4>Initial Preparation:</h4>
+                        <li>Boil beef until tender (1-2 hours)</li>
+                        <li>Sauté garlic, onions, and tomatoes</li>
+                        <li>Add chorizo and beef</li>
+                        
+                        <h4 class="mt-3">Adding Vegetables:</h4>
+                        <li>Add potatoes and sweet potatoes</li>
+                        <li>Add corn and plantains</li>
+                        <li>Add garbanzo beans</li>
+                        <li>Add remaining vegetables</li>
+                        
+                        <h4 class="mt-3">Finishing:</h4>
+                        <li>Season with fish sauce</li>
+                        <li>Add pechay last</li>
+                        <li>Simmer until vegetables are cooked</li>
+                    </ol>
+
+                    <h3 class="mt-4">Chef's Tips:</h3>
+                    <ul>
+                        <li>Cook beef until very tender</li>
+                        <li>Add vegetables in order of cooking time</li>
+                        <li>Don't overcook the vegetables</li>
+                        <li>Serve hot with rice</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

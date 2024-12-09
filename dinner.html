@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagCapé Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+body {
+    background-color: #3c1810;
+    background-image: radial-gradient(circle at center, #592115 0%, #3c1810 0.5%);
+    background-size: 50px 50px;
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at center, rgba(89, 33, 21, 0.5) 8px, transparent 8px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.logo {
+    font-size: 24px;
+    color: #592115;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.menu-item {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block;
+    padding: 12px 25px;
+    color: #592115;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.menu-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.menu-item .price {
+    color: #592115;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.side-menu {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 800px;
+    width: 200px;
+    background-color: #f8e6d8;
+    padding: 20px 0;
+    z-index: 1;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.quantity-control {
+    margin: 10px 0;
+}
+
+.quantity-control input {
+    width: 60px;
+    margin-left: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #592115;
+    border-color: #592115;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #3c1810;
+    border-color: #3c1810;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white py-3 px-4 position-relative" style="z-index: 1;">
+        <div class="container-fluid">
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo">MagCapé</div>
+            </a>
+            <div class="d-flex align-items-center gap-4">
+                <a href="LearnMore.html" class="nav-link">Upload Reciepe</a>
+                <a href="Menu.html" class="nav-link">OUR MENU</a>
+                <a href="MainPage.html" class="nav-link">OUR CAFÉ</a>
+                <div class="search-bar">
+                    <input type="text" placeholder="SEARCH" class="form-control">
+                </div>
+                <a href="Basket.html" class="nav-link">MY BASKET</a>
+            </div>
+        </div>
+    </nav>
+
+<div class="side-menu">
+        <a href="breakfast.html" class="menu-item">Breakfast</a>
+        <a href="lunch.html" class="menu-item">Lunch</a>
+        <a href="dinner.html" class="menu-item">Dinner</a>
+        <a href="drinks.html" class="menu-item">Drinks</a>
+</div>
+
+<div class="container py-4 position-relative" style="z-index: 1;">
+    <<div class="bg-white p-4 rounded-4">
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="menu-item p-3 text-center">
+                    <a href="bistek-recipe.html" class="text-decoration-none">
+                        <img src="https://i.pinimg.com/736x/79/7f/f4/797ff48df27bae7eeba86348b0046e4b.jpg" alt="Bistek Tagalog" class="mb-3">
+                        <h3 class="h5 mb-2">Bistek Tagalog</h3>
+                        <div class="price mb-2">$15.99</div>
+                    </a>
+                    <div class="quantity-control mb-2">
+                        <label for="quantity11">Quantity:</label>
+                        <input type="number" id="quantity11" min="0" value="0">
+                    </div>
+                    <button class="btn btn-primary w-100">Add to Basket</button>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="menu-item p-3 text-center">
+                    <a href="crispy-pata-recipe.html" class="text-decoration-none">
+                        <img src="https://i.pinimg.com/736x/6c/2e/8b/6c2e8b0fe482f0699cbf5d061e950a4f.jpg" alt="Crispy Pata" class="mb-3">
+                        <h3 class="h5 mb-2">Crispy Pata</h3>
+                        <div class="price mb-2">$24.99</div>
+                    </a>
+                    <div class="quantity-control mb-2">
+                        <label for="quantity12">Quantity:</label>
+                        <input type="number" id="quantity12" min="0" value="0">
+                    </div>
+                    <button class="btn btn-primary w-100">Add to Basket</button>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="menu-item p-3 text-center">
+                    <a href="pancit-malabon-recipe.html" class="text-decoration-none">
+                        <img src="https://i.pinimg.com/736x/d5/4d/4c/d54d4c1fa118e96a0707b4ac46010e01.jpg" alt="Pancit Malabon" class="mb-3">
+                        <h3 class="h5 mb-2">Pancit Malabon</h3>
+                        <div class="price mb-2">$13.99</div>
+                    </a>
+                    <div class="quantity-control mb-2">
+                        <label for="quantity13">Quantity:</label>
+                        <input type="number" id="quantity13" min="0" value="0">
+                    </div>
+                    <button class="btn btn-primary w-100">Add to Basket</button>
+                </div>
+            </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="menu-item p-3 text-center">
+                    <a href="bulalo-recipe.html" class="text-decoration-none">
+                        <img src="https://i.pinimg.com/736x/e1/53/b6/e153b6d88e3f2b889a781d330b5d62d9.jpg" alt="Bulalo" class="mb-3">
+                        <h3 class="h5 mb-2">Bulalo</h3>
+                        <div class="price mb-2">$16.99</div>
+                    </a>
+                    <div class="quantity-control mb-2">
+                        <label for="quantity14">Quantity:</label>
+                        <input type="number" id="quantity14" min="0" value="0">
+                    </div>
+                    <button class="btn btn-primary w-100">Add to Basket</button>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="menu-item p-3 text-center">
+                    <a href="monggo-recipe.html" class="text-decoration-none">
+                        <img src="https://i.pinimg.com/736x/45/a5/88/45a588079548e4669b1d895e98495f44.jpg" alt="Monggo Guisado" class="mb-3">
+                        <h3 class="h5 mb-2">Monggo Guisado</h3>
+                        <div class="price mb-2">$10.99</div>
+                    </a>
+                    <div class="quantity-control mb-2">
+                        <label for="quantity15">Quantity:</label>
+                        <input type="number" id="quantity15" min="0" value="0">
+                    </div>
+                    <button class="btn btn-primary w-100">Add to Basket</button>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="menu-item p-3 text-center">
+                    <a href="ginataang-baboy-recipe.html" class="text-decoration-none">
+                        <img src="https://i.pinimg.com/736x/c5/8d/0e/c58d0e52d16f1195141615a9c6425ff2.jpg" alt="Ginataang Baboy" class="mb-3">
+                        <h3 class="h5 mb-2">Ginataang Baboy</h3>
+                        <div class="price mb-2">$13.99</div>
+                    </a>
+                    <div class="quantity-control mb-2">
+                        <label for="quantity16">Quantity:</label>
+                        <input type="number" id="quantity16" min="0" value="0">
+                    </div>
+                    <button class="btn btn-primary w-100">Add to Basket</button>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="menu-item p-3 text-center">
+                    <a href="sisig-recipe.html" class="text-decoration-none">
+                        <img src="https://i.pinimg.com/736x/80/6d/86/806d86466e094eb812dc0a03e928ce3c.jpg" alt="Sizzling Sisig" class="mb-3">
+                        <h3 class="h5 mb-2">Sizzling Sisig</h3>
+                        <div class="price mb-2">$14.99</div>
+                    </a>
+                    <div class="quantity-control mb-2">
+                        <label for="quantity17">Quantity:</label>
+                        <input type="number" id="quantity17" min="0" value="0">
+                    </div>
+                    <button class="btn btn-primary w-100">Add to Basket</button>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="menu-item p-3 text-center">
+                    <a href="bangus-belly-recipe.html" class="text-decoration-none">
+                        <img src="https://i.pinimg.com/736x/44/00/0c/44000cddde27dc68723928f702b987e2.jpg" alt="Bangus Belly" class="mb-3">
+                        <h3 class="h5 mb-2">Bangus Belly</h3>
+                        <div class="price mb-2">$12.99</div>
+                    </a>
+                    <div class="quantity-control mb-2">
+                        <label for="quantity18">Quantity:</label>
+                        <input type="number" id="quantity18" min="0" value="0">
+                    </div>
+                    <button class="btn btn-primary w-100">Add to Basket</button>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="menu-item p-3 text-center">
+                    <a href="sotanghon-recipe.html" class="text-decoration-none">
+                        <img src="https://i.pinimg.com/736x/45/65/f2/4565f25059f78bc6cfa736c9fe72917f.jpg" alt="Sotanghon Soup" class="mb-3">
+                        <h3 class="h5 mb-2">Sotanghon Soup</h3>
+                        <div class="price mb-2">$9.99</div>
+                    </a>
+                    <div class="quantity-control mb-2">
+                        <label for="quantity19">Quantity:</label>
+                        <input type="number" id="quantity19" min="0" value="0">
+                    </div>
+                    <button class="btn btn-primary w-100">Add to Basket</button>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="menu-item p-3 text-center">
+                    <a href="puto-bumbong-recipe.html" class="text-decoration-none">
+                        <img src="https://i.pinimg.com/736x/c3/21/33/c32133bca68501d55446b58a3e874100.jpg" alt="Puto Bumbong" class="mb-3">
+                        <h3 class="h5 mb-2">Puto Bumbong</h3>
+                        <div class="price mb-2">$7.99</div>
+                    </a>
+                    <div class="quantity-control mb-2">
+                        <label for="quantity20">Quantity:</label>
+                        <input type="number" id="quantity20" min="0" value="0">
+                    </div>
+                    <button class="btn btn-primary w-100">Add to Basket</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

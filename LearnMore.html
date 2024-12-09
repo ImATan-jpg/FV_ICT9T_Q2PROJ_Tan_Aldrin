@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MagCapé Learn More</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #3c1810;
+            background-image: radial-gradient(circle at center, #592115 0%, #3c1810 0.5%);
+            background-size: 50px 50px;
+            position: relative;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at center, rgba(89, 33, 21, 0.5) 8px, transparent 8px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: #592115;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: #333 !important;
+            font-size: 14px;
+        }
+
+        .content-box {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .learn-more-text {
+            color: #592115;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #f8e6d8;
+            padding: 10px 20px;
+        }
+
+        .learn-more-text:last-child {
+            border-bottom: none;
+        }
+        h1{
+            color: White;
+        }
+        .custom-file-upload {
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+    border: 2px dashed #592115;
+    background-color: #f8e6d8;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(89, 33, 21, 0.1);
+    transition: all 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: #f0d9c7;
+    border-color: #3c1810;
+    transform: translateY(-2px);
+    box-shadow: 0px 12px 25px rgba(89, 33, 21, 0.15);
+}
+
+.custom-file-upload .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-file-upload .icon svg {
+    height: 80px;
+    fill: #592115;
+}
+
+.custom-file-upload .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-file-upload .text span {
+    font-weight: 500;
+    color: #592115;
+}
+
+.custom-file-upload input {
+    display: none;
+}
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.3rem;
+    --stroke: #592115;
+    --fill: #592115;
+}
+
+.rating input {
+    appearance: unset;
+}
+
+.rating label {
+    cursor: pointer;
+}
+
+.rating svg {
+    width: 2rem;
+    height: 2rem;
+    overflow: visible;
+    fill: transparent;
+    stroke: var(--stroke);
+    stroke-linejoin: bevel;
+    stroke-dasharray: 12;
+    animation: idle 4s linear infinite;
+    transition: stroke 0.2s, fill 0.5s;
+}
+
+@keyframes idle {
+    from {
+        stroke-dashoffset: 24;
+    }
+}
+
+.rating label:hover svg {
+    stroke: var(--fill);
+}
+
+.rating input:checked ~ label svg {
+    transition: 0s;
+    animation: idle 4s linear infinite, yippee 0.75s backwards;
+    fill: var(--fill);
+    stroke: var(--fill);
+    stroke-opacity: 0;
+    stroke-dasharray: 0;
+    stroke-linejoin: miter;
+    stroke-width: 8px;
+}
+
+@keyframes yippee {
+    0% {
+        transform: scale(1);
+        fill: var(--fill);
+        fill-opacity: 0;
+        stroke-opacity: 1;
+        stroke: var(--stroke);
+        stroke-dasharray: 10;
+        stroke-width: 1px;
+        stroke-linejoin: bevel;
+    }
+
+    30% {
+        transform: scale(0);
+        fill: var(--fill);
+        fill-opacity: 0;
+        stroke-opacity: 1;
+        stroke: var(--stroke);
+        stroke-dasharray: 10;
+        stroke-width: 1px;
+        stroke-linejoin: bevel;
+    }
+
+    30.1% {
+        stroke: var(--fill);
+        stroke-dasharray: 0;
+        stroke-linejoin: miter;
+        stroke-width: 8px;
+    }
+
+    60% {
+        transform: scale(1.2);
+        fill: var(--fill);
+    }
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white py-3 px-4 position-relative" style="z-index: 1;">
+        <div class="container-fluid">
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo">MagCapé</div>
+            </a>
+            <div class="d-flex align-items-center gap-4">
+                <a href="LearnMore.html" class="nav-link">Upload Reciepe</a>
+                <a href="Menu.html" class="nav-link">OUR MENU</a>
+                <a href="index.html" class="nav-link">OUR CAFÉ</a>
+                <div class="search-bar">
+                    <input type="text" placeholder="SEARCH" class="form-control">
+                </div>
+                <a href="Basket.html" class="nav-link">MY BASKET</a>
+            </div>
+        </div>
+    </nav>
+
+<div class="container py-5 position-relative" style="z-index: 1;">
+    <div class="card bg-white p-5 rounded-4 text-center">
+        <h1 style="color: #592115; font-weight: bold; margin-bottom: 1rem;">Want to upload your own recipe?</h1>
+        <h1 style="color: #8b6b61; margin-bottom: 2rem;">Upload them here</h1>
+        
+        
+        <div class="container py-5 position-relative" style="z-index: 1;">
+    <div class="card bg-white p-5 rounded-4 text-center">
+        <h1 style="color: #592115; font-weight: bold; margin-bottom: 1rem;">Want to upload your own recipe?</h1>
+        <h1 style="color: #8b6b61; margin-bottom: 2rem;">Upload them here</h1>
+        
+        
+        <div class="d-flex justify-content-center">
+            <label for="file" class="custom-file-upload">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z" fill=""></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="text">
+                    <span>Click to upload recipe</span>
+                </div>
+                <input id="file" type="file">
+            </label>
+        </div>
+
+        
+        <div class="d-flex justify-content-center mt-4">
+    <div class="rating">
+        <input type="radio" id="star-1" name="star-radio" value="star-1">
+        <label for="star-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+        </label>
+        <input type="radio" id="star-2" name="star-radio" value="star-1">
+        <label for="star-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+        </label>
+        <input type="radio" id="star-3" name="star-radio" value="star-1">
+        <label for="star-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+        </label>
+        <input type="radio" id="star-4" name="star-radio" value="star-1">
+        <label for="star-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+        </label>
+        <input type="radio" id="star-5" name="star-radio" value="star-1">
+        <label for="star-5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+        </label>
+    </div>
+</div>
+
+</body>
+</html>
